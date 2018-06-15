@@ -15,15 +15,15 @@ CREATE TABLE class_type
 );
 
 
-CREATE TABLE buyers
-(
-	id int NOT NULL AUTO_INCREMENT,
-	buyer_name VARCHAR (255) NOT NULL,
-	contact_number VARCHAR (255) NOT NULL,
-	email VARCHAR(255) NOT NULL,
-    buyer_address VARCHAR (255) NOT NULL,
-	buyer_id int NOT NULL,
-    ts TIMESTAMP,
-	PRIMARY KEY (id),
-	FOREIGN KEY (buyer_id) REFERENCES class_type(id)
-);
+-- CREATE TABLE buyers
+-- (
+-- 	id int NOT NULL AUTO_INCREMENT,
+-- 	buyer_name VARCHAR (255) NOT NULL,
+-- 	contact_number VARCHAR (255) NOT NULL,
+-- 	email VARCHAR(255) NOT NULL,
+--     buyer_address VARCHAR (255) NOT NULL,
+-- 	buyer_id int NOT NULL,
+--     ts TIMESTAMP,
+-- 	PRIMARY KEY (id),
+-- 	FOREIGN KEY (buyer_id) REFERENCES class_type(id)
+-- );
