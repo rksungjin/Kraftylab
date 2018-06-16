@@ -23,6 +23,8 @@ $(document).ready(function() {
 
                     $("#clicksipnsoap").append(row);
 
+                   window.location.href = "/public/schedule.html"
+
                 }
             }
         })
