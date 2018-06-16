@@ -13,7 +13,7 @@ $(document).ready(function() {
         
         $.get("/api/sipnsoap/whatCity", function(data) {
             if (data.length !== 0) {
-                for (var i=0; i<data.length; i++) {
+                for (var i=0; i<data.length; i++) { 
                     var row = $("<div>");
                     row.addClass("sip");
                     row.append("<h4>" + "Sip 'N Soap Classes in " + whatCity + "</h4>");
