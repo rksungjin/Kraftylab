@@ -12,7 +12,7 @@ module.exports = function(app) {
   });
 
   // authors route loads author-manager.html
-  app.get("/form", function(req, res) {
+  app.get("/new", function(req, res) {
     res.sendFile(path.join(__dirname, "../schedule.html"));
   });
 
