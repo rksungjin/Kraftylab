@@ -1,20 +1,20 @@
-var express = require("express");
+// var express = require("express");
 
-var router = express.Router();
+// var router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
-var db = require("../models/class.js");
+// // Import the model (cat.js) to use its database functions.
+// var db = require("../models/class.js");
 
-module.exports = function(app) {
+// module.exports = function(app) {
 
-    // GET route for getting all of the posts
-    app.get("/api/:class_name/:city", function(req, res) {
-      db.Class.findAll({})
-        .then(function(dbClass) {
-          res.json(dbClass);
-        });
-    });
-};
+//     // GET route for getting all of the posts
+//     app.get("/api/:class_name/:city", function(req, res) {
+//       db.Class.findAll({})
+//         .then(function(dbClass) {
+//           res.json(dbClass);
+//         });
+//     });
+// };
 
 
 // router.get("/api/:class_name/:city", function(req, res) {

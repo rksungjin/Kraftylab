@@ -12,8 +12,14 @@ module.exports = function(app) {
   });
 
   // authors route loads author-manager.html
-  app.get("/new", function(req, res) {
-    res.sendFile(path.join(__dirname, "../schedule.html"));
+  app.get("/schedule", function(req, res) {
+    res.sendFile(path.join(__dirname, "./schedule.html"));
   });
-  
+
+  //Next Step: add book.html for class booking (after schedule.html appears, user hits 'Book Now')
+
+  app.get("/form", function(req, res) {
+    res.sendFile(path.join(__dirname, "./form.html"));
+  });
+
 };
