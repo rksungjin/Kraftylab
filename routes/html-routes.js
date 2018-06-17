@@ -15,5 +15,5 @@ module.exports = function(app) {
   app.get("/new", function(req, res) {
     res.sendFile(path.join(__dirname, "../schedule.html"));
   });
-
+  
 };
