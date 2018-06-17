@@ -8,6 +8,8 @@ exports.index = function(req, res) {
     }
   }).then(function(dbClass) {
     console.log(dbClass);
+
+    //enter in from api-routes created in class with Aaron
     
     //need to confirm how to render html page - since we are not using handlebars. 
 

@@ -25,6 +25,7 @@ app.use(bodyParser.json());
 
 // app.use(routes);
 
+require("./routes/html-routes.js")(app);
 require('./routes')(app);
 
 // Start our server so that it can begin listening to client requests.
