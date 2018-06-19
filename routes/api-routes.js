@@ -1,4 +1,5 @@
 var express = require("express");
+var path = require("path");
 
 var router = express.Router();
 
@@ -13,7 +14,9 @@ module.exports = function(app) {
           }
         })
           .then(function(dbClass) {
+            res.sendFile(path.join(__dirname, "../public/schedule.html"));
             res.json(dbClass);
+            
           });
       });
 };
