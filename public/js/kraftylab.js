@@ -7,12 +7,23 @@ $(document).ready(function() {
     var tableSection = $("#sipnsoapcontainer");
 
     $(".sip").on("click", function() {
+
         whatClass = $(clicksipnsoap).attr("data-name");
         console.log("What class: " + whatClass);
         whatCity = $(this).attr("data-name");
         console.log("What city: " + whatCity);
-        getScheduleData();
-        function getScheduleData(id) {
+        $.get("/schedule", function(data) {
+            console.log("hi");
+            console.log(data);
+            
+        })
+        .then(function() {
+            getScheduleData();
+            
+            
+          });
+          function getScheduleData() {
+    
             $.get("/api/"+whatClass+"/"+whatCity+"/", function(data) {
                 console.log(data);
                 if (data.length !== 0) {
@@ -28,6 +39,13 @@ $(document).ready(function() {
                 //     //    window.location.href = "/public/schedule.html";
                     }
                 };
+            });
+        }
+    });
+})
+    
+
+
                 // classdata = data;
                 // if (!classdata || !classdata.length) {
                 // //   displayEmpty(author);
@@ -99,9 +117,8 @@ $(document).ready(function() {
             //     // when we hit submit
             //     updating = true;
             //   }
-            });
-          }
-    });
+           
+          
         
         // whatClass = "Sip_N_Soap";
         // console.log(whatClass);
@@ -123,4 +140,3 @@ $(document).ready(function() {
     // })
 
 
-});
