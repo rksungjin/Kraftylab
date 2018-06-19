@@ -18,8 +18,8 @@ module.exports = function(app) {
 
   //Next Step: add book.html for class booking (after schedule.html appears, user hits 'Book Now')
 
-  app.get("/form", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/form.html"));
-  });
+  // app.get("/form", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/form.html"));
+  // });
 
 };
