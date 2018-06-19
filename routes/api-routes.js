@@ -1,21 +1,22 @@
-// var express = require("express");
+var express = require("express");
 
-// var router = express.Router();
+var router = express.Router();
 
-// // Import the model (cat.js) to use its database functions.
-// var db = require("../models/class.js");
+var db = require("./../models");
 
-// module.exports = function(app) {
-
-//     // GET route for getting all of the posts
-//     app.get("/api/:class_name/:city", function(req, res) {
-//       db.Class.findAll({})
-//         .then(function(dbClass) {
-//           res.json(dbClass);
-//         });
-//     });
-// };
-
+module.exports = function(app) {
+    app.get("/api/:class_name/:city", function(req, res) {
+        db.Class.findAll({
+          where: {
+            class_name: req.params.class_name,
+            city: req.params.city
+          }
+        })
+          .then(function(dbClass) {
+            res.json(dbClass);
+          });
+      });
+};
 
 // router.get("/api/:class_name/:city", function(req, res) {
 //     var condition = "id = " + req.params.id;
@@ -29,13 +30,13 @@
 //         });
 //     });
         
-    //   class: req.body.class_name
-    // }, condition, function(result) {
-    //   if (result.changedRows == 0) {
-    //     // If no rows were changed, then the ID must not exist, so 404
-    //     return res.status(404).end();
-    //   } else {
-    //     res.status(200).end();
-    //   }
-    // });
+//       class: req.body.class_name
+//     }, condition, function(result) {
+//       if (result.changedRows == 0) {
+//         // If no rows were changed, then the ID must not exist, so 404
+//         return res.status(404).end();
+//       } else {
+//         res.status(200).end();
+//       }
+//     });
 //   });

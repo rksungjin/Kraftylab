@@ -1,9 +1,11 @@
 module.exports = function(app){
 
-    var application = require('./routes/application');
-    var classes = require('./routes/classes');
+    const application = require('./routes/application');
+    //const classes = require('./routes/classes');
+    const schedule = require('./routes/schedule')
 
     app.use('/', application);
-    app.use('/classes', classes);
+    // app.use('/classes', classes);
+    app.use('/', schedule);
 
 }
