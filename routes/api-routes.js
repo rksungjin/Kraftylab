@@ -3,7 +3,7 @@ var path = require("path");
 
 var router = express.Router();
 
-var db = require("./../models");
+var db = require("../models/");
 
 module.exports = function(app) {
     app.get("/api/:class_name/:city", function(req, res) {
@@ -20,6 +20,42 @@ module.exports = function(app) {
           });
       });
 };
+
+
+//Jane tried these 2 below but both crashed -- what is she missing
+/*
+var db = require("../models/class.js");
+router.get("/api/:class_name/:city", function(req, res) {
+  db.Class.findAll(function(data) {
+    var hbsObject = {
+      city: data
+    };
+    console.log(hbsObject);
+    res.render("schedule", hbsObject);
+  });
+});
+
+exports.index = function(req, res) {
+  db.Class.findAll({
+    where: {
+      class_name: req.class_name,
+      city: req.city
+    }
+  }).then(function(dbClass) {
+    console.log(dbClass);
+    res.render('schedule', {
+      layout: 'main',
+      schedule: dbClass
+    });
+  });
+};
+*/
+
+
+
+
+
+
 
 // router.get("/api/:class_name/:city", function(req, res) {
 //     var condition = "id = " + req.params.id;
