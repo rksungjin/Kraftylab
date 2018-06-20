@@ -6,43 +6,48 @@ $(document).ready(function() {
     var whatClass = "";
     var tableSection = $("#sipnsoapcontainer");
 
-    $(".sip").on("click", function() {
+    getScheduleData();
 
-        whatClass = $(clicksipnsoap).attr("data-name");
-        console.log("What class: " + whatClass);
-        whatCity = $(this).attr("data-name");
-        console.log("What city: " + whatCity);
-        $.get("/schedule", function(data) {
-            console.log("hi");
-            console.log(data);
+    // $(".sip").on("click", function() {
+
+    //     whatClass = $(clicksipnsoap).attr("data-name");
+    //     console.log("What class: " + whatClass);
+    //     whatCity = $(this).attr("data-name");
+    //     console.log("What city: " + whatCity);
+    //     $.get("/schedule", function(data) {
+    //         console.log("hi");
+    //         console.log(data);
             
-        })
-        .then(function() {
-            getScheduleData();
+    //     })
+    //     .then(function() {
+          
+    //         getScheduleData();
             
-            
-          });
+    //       });
           function getScheduleData() {
-    
-            $.get("/api/"+whatClass+"/"+whatCity+"/", function(data) {
+            var queryUrl = "/api/"+whatClass+"/"+whatCity+"/";
+
+            
+            console.log(queryUrl);
+            $.get(queryUrl, function(data) {
                 console.log(data);
                 if (data.length !== 0) {
                     for (var i=0; i<data.length; i++) {
                     var row = $("<div>");
-                    row.addClass("sip");
+                    // row.addClass("sip");
                     row.append("<h4>" + "Sip 'N Soap Classes in " + whatCity + "</h4>");
                     row.append("<p>" + data[i].date_time + "</p>");
                     // row.append("<p>" + data[i].time + "</p>");
                     row.append("<p>" + data[i].city_address + "</p>");
                     $(tableSection).append(row); // on schedule.html page
-    
-                //     //    window.location.href = "/public/schedule.html";
+                    window.location = "../schedule";
+                 
                     }
                 };
             });
         }
     });
-})
+// })
     
 
 
