@@ -20,6 +20,11 @@ module.exports = function(app) {
     res.render(path.join(__dirname, "../views/schedule.handlebars"));
   });
 
+  // authors route loads author-manager.html
+  app.get("/form", function(req, res) {
+    res.render(path.join(__dirname, "../views/form.handlebars"));
+  });
+
 
 
   //Next Step: add book.html for class booking (after schedule.html appears, user hits 'Book Now')
