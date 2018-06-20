@@ -12,7 +12,11 @@ module.exports = function(app) {
   });
 
   // authors route loads author-manager.html
-  app.get("/schedule", function(req, res) {
+  app.get("/schedule/", function(req, res) {
+    res.render(path.join(__dirname, "../views/schedule.handlebars"));
+  });
+  // authors route loads author-manager.html
+  app.get("/schedule/:city", function(req, res) {
     res.render(path.join(__dirname, "../views/schedule.handlebars"));
   });
 
