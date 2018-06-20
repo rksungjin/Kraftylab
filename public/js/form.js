@@ -14,7 +14,7 @@ $(document).ready(function() {
 
     var posts;
 
-
+})
 
     
     /*
@@ -142,8 +142,8 @@ $(document).ready(function() {
       var newPostCategory = $(this).val();
       getPosts(newPostCategory);
     }
-  
+ 
   });
+ */
 
-  */
   
