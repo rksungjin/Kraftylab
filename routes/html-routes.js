@@ -20,7 +20,7 @@ module.exports = function(app) {
     res.render(path.join(__dirname, "../views/schedule.handlebars"));
   });
 
-  // authors route loads author-manager.html
+  // form route loads to form.handlebars
   app.get("/form", function(req, res) {
     res.render(path.join(__dirname, "../views/form.handlebars"));
   });
