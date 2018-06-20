@@ -12,8 +12,8 @@ module.exports = function(app) {
   });
 
   // authors route loads author-manager.html
-  app.get("/schedule", function(req, res) {
-    res.render(path.join(__dirname, "../public/schedule"));
+  app.get("/schedule/:city", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/schedule.html"));
   });
 
 
