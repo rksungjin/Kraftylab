@@ -10,20 +10,20 @@ $(document).ready(function() {
 
     // $(".sip").on("click", function() {
 
-    //     whatClass = $(clicksipnsoap).attr("data-name");
-    //     console.log("What class: " + whatClass);
-    //     whatCity = $(this).attr("data-name");
-    //     console.log("What city: " + whatCity);
-    //     $.get("/schedule", function(data) {
-    //         console.log("hi");
-    //         console.log(data);
+        // whatClass = $(clicksipnsoap).attr("data-name");
+        // console.log("What class: " + whatClass);
+        // whatCity = $(this).attr("data-name");
+        // console.log("What city: " + whatCity);
+        // $.get("/schedule", function(data) {
+        //     console.log("hi");
+        //     console.log(data);
             
-    //     })
-    //     .then(function() {
+        // })
+        // .then(function() {
           
-    //         getScheduleData();
+        //     getScheduleData();
             
-    //       });
+        //   });
           function getScheduleData() {
             var queryUrl = "/api/"+whatClass+"/"+whatCity+"/";
 
