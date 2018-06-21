@@ -4,41 +4,37 @@ html {
   height: 100%;
 }
 
+
 body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+}
+
+#videothumbnail {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  
 }
 
 hr {
   max-width: 50px;
   border-width: 3px;
-<<<<<<< HEAD
   border-color: #27ece6;
-=======
-  border-color: #F05F40;
->>>>>>> master
 }
 
 hr.light {
   border-color: #fff;
 }
 
+
 a {
-<<<<<<< HEAD
   color: #27ece6;
-=======
-  color: #F05F40;
->>>>>>> master
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
 }
 
 a:hover {
-<<<<<<< HEAD
   color: #27ece6;
-=======
-  color: #f05f40;
->>>>>>> master
 }
 
 h1,
