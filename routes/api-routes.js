@@ -17,6 +17,7 @@ module.exports = function(app) {
           }
         })
           .then(function(dbClass) {
+            //try travel secure exports.index res.render
             var hbsObject = { classes: dbClass };
             res.render('schedule', hbsObject);
             // res.render(path.join(__dirname, "../views/schedule.handlebars"));
@@ -25,7 +26,7 @@ module.exports = function(app) {
           });
 
           app.post("/api/buyers", function(req, res) {
-            db.Buyer.create({
+            db.Class.create({
               buyer_name: req.body.buyer_name,
               buyer_email: req.body.buyer_email,
               contact_number: req.body.contact_number

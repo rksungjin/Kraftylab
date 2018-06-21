@@ -7,6 +7,7 @@ $(document).ready(function(){
       buyer_name: "Lychee",
       buyer_email: "Lychee@yahoo.com",
       contact_number: "8897987987"
+      //insert group on code into model database
       // forcePoints: $("#force-points").val().trim()
     };
   console.log("hello");
