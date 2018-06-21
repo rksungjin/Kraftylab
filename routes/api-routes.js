@@ -1,4 +1,5 @@
 var express = require("express");
+
 var path = require("path");
 
 var router = express.Router();
@@ -6,20 +7,37 @@ var router = express.Router();
 var db = require("../models/");
 
 module.exports = function(app) {
-    app.get("/api/:class_name/:city", function(req, res) {
-        db.Class.findAll({
+
+          //should go into HTML-ROUTES.JS FILES*
+      app.get("/classes/:class_name/:city", function(req, res) {
+        db.Class.findOne({
           where: {
             class_name: req.params.class_name,
             city: req.params.city
           }
         })
           .then(function(dbClass) {
-            res.sendFile(path.join(__dirname, "../public/schedule.html"));
-            res.json(dbClass);
-            
+            var hbsObject = { classes: dbClass };
+            res.render('schedule', hbsObject);
+            // res.render(path.join(__dirname, "../views/schedule.handlebars"));
+            // res.json(dbClass);
           });
-      });
+          });
+
+          app.post("/api/buyers", function(req, res) {
+            db.Buyer.create({
+              buyer_name: req.body.buyer_name,
+              buyer_email: req.body.buyer_email,
+              contact_number: req.body.contact_number
+            })
+            .then(function(dbClass) {
+              res.json(dbClass);
+            });
+          })
+
+        
 };
+
 
 
 //Jane tried these 2 below but both crashed -- what is she missing
@@ -50,32 +68,3 @@ exports.index = function(req, res) {
   });
 };
 */
-
-
-
-
-
-
-
-// router.get("/api/:class_name/:city", function(req, res) {
-//     var condition = "id = " + req.params.id;
-  
-//     console.log("condition", condition);
-  
-//     Class.findAll({
-//         db.Class.findAll({})
-//         .then(function(dbClass) {
-//           res.json(dbClass);
-//         });
-//     });
-        
-//       class: req.body.class_name
-//     }, condition, function(result) {
-//       if (result.changedRows == 0) {
-//         // If no rows were changed, then the ID must not exist, so 404
-//         return res.status(404).end();
-//       } else {
-//         res.status(200).end();
-//       }
-//     });
-//   });
