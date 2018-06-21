@@ -4,9 +4,11 @@
 
   <!-- <body id="page-top"> -->
    {{> nav }}
+  
 
 
     <section id="contact">
+
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
@@ -15,22 +17,20 @@
             <h3 class="mb-5">Sip N Soap in Hoboken</h3>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class=""></i>
-            <p>Thur. June 28, 2018  6:00pm</p>
-            <p>123 Walcott St.</p>
-            <a href="/form" role="button" class="btn btn-outline-info" aria-pressed="true">Book Your Reservation!</a>
-            <br><br>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class=""></i>
-            <p>Thur. July 5, 2018  6:00pm</p>
-            <p>123 Walcott St.</p>
-            <a href="/form" role="button" class="btn btn-outline-info" aria-pressed="true">Book Your Reservation!</a>
-            <br>
-              <!--<a href="mailto:your-email@your-domain.com">info@kraftylab.com</a>-->
-          </div>
+
+    
+
+      {{#each classes}}
+      {{this.city}}
+      {{this.class_name}}
+      {{this.city_address}}
+
+      {{/each}}
+
+           {{> form}}
+           {{!-- issue might be sending an html file back; after template object --}}
+
+
         </div>
       </div>
     </section>
