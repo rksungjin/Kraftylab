@@ -4,50 +4,55 @@
 $(document).ready(function() {
     var whatCity = "";
     var whatClass = "";
-    var tableSection = $("#sipnsoapcontainer");
+    // var tableSection = $("#sipnsoapcontainer");
+    // getScheduleData();
 
-    getScheduleData();
+    $(".sip").on("click", function() {
 
-    // $(".sip").on("click", function() {
-
-        // whatClass = $(clicksipnsoap).attr("data-name");
-        // console.log("What class: " + whatClass);
-        // whatCity = $(this).attr("data-name");
-        // console.log("What city: " + whatCity);
+        whatClass = $(clicksipnsoap).attr("data-name");
+        console.log("What class: " + whatClass);
+        whatCity = $(this).attr("data-name");
+        console.log("What city: " + whatCity);
         // $.get("/schedule", function(data) {
         //     console.log("hi");
         //     console.log(data);
-            
         // })
         // .then(function() {
-          
-        //     getScheduleData();
-            
+            getScheduleData();
         //   });
           function getScheduleData() {
             var queryUrl = "/api/"+whatClass+"/"+whatCity+"/";
 
-            
             console.log(queryUrl);
             $.get(queryUrl, function(data) {
-                console.log(data);
-                if (data.length !== 0) {
-                    for (var i=0; i<data.length; i++) {
-                    var row = $("<div>");
-                    // row.addClass("sip");
-                    row.append("<h4>" + "Sip 'N Soap Classes in " + whatCity + "</h4>");
-                    row.append("<p>" + data[i].date_time + "</p>");
-                    // row.append("<p>" + data[i].time + "</p>");
-                    row.append("<p>" + data[i].city_address + "</p>");
-                    $(tableSection).append(row); // on schedule.html page
-                    window.location = "../schedule";
+                if (data) {
+                    console.log(data);
+                    // If this post exists, prefill our cms forms with its data
+                    $("#sipnsoapcontainer").val(data.class_name);
+                    // bodyInput.val(data.body);
+                    // authorId = data.AuthorId || data.id;
+                    // // If we have a post with this id, set a flag for us to know to update the post
+                    // // when we hit submit
+                    // updating = true;
+                  }
+                // console.log(data);
+                // if (data.length !== 0) {
+                //     for (var i=0; i<data.length; i++) {
+                //     var row = $("<div>");
+                //     // row.addClass("sip");
+                //     row.append("<h4>" + "Sip 'N Soap Classes in " + whatCity + "</h4>");
+                //     row.append("<p>" + data[i].date_time + "</p>");
+                //     // row.append("<p>" + data[i].time + "</p>");
+                //     row.append("<p>" + data[i].city_address + "</p>");
+                //     $(tableSection).append(row); // on schedule.html page
+                    // window.location = "../schedule";
                  
-                    }
-                };
+                    // }
+                // };
             });
         }
     });
-// })
+})
     
 
 
