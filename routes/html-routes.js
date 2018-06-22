@@ -11,14 +11,11 @@ module.exports = function(app) {
     res.render("index");
   });
 
-  // authors route loads author-manager.html
-  app.get("/schedule", function(req, res) {
-    res.render(path.join(__dirname, "../views/schedule.handlebars"));
-  });
-  // authors route loads author-manager.html
-  app.get("/schedule/:city", function(req, res) {
-    res.render(path.join(__dirname, "../views/schedule.handlebars"));
-  });
+  // // authors route loads author-manager.html
+  // app.get("/schedule", function(req, res) {
+  //   res.render(path.join(__dirname, "../views/schedule.handlebars"));
+  // });
+  // // authors route loads author-manager.html
 
   // form route loads to form.handlebars
   app.get("/form", function(req, res) {
