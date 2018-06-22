@@ -17,7 +17,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allownull:false
     },
-    //need to fill in remaining buyer model
   }, {});
   Buyer.associate = function(models) {
     // associations can be defined here
