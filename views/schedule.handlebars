@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+{{!-- <!DOCTYPE html>
+<html lang="en"> --}}
 
 
   <!-- <body id="page-top"> -->
@@ -14,16 +14,15 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading">Let's Schedule a Class!</h2>
             <hr class="my-4">
-            <h3 class="mb-5">Sip N Soap in Hoboken</h3>
+            {{!-- <h3 class="mb-5">Sip N Soap in Hoboken</h3> --}}
           </div>
         </div>
 
     
 
       {{#each classes}}
-      {{this.city}}
-      {{this.class_name}}
       {{this.city_address}}
+      {{this.date_time}}
 
       {{/each}}
 
@@ -53,5 +52,5 @@
 
 
   
-
-</html>
+{{!-- 
+</html> --}}
