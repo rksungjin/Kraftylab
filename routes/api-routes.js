@@ -26,7 +26,7 @@ module.exports = function(app) {
           });
 
           app.post("/api/buyers", function(req, res) {
-            db.Class.create({
+            db.Buyers.create({
               buyer_name: req.body.buyer_name,
               buyer_email: req.body.buyer_email,
               contact_number: req.body.contact_number
