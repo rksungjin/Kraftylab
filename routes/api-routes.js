@@ -26,10 +26,11 @@ module.exports = function(app) {
           });
 
           app.post("/api/buyers", function(req, res) {
-            db.Buyers.create({
+            db.Buyer.create({
               buyer_name: req.body.buyer_name,
               buyer_email: req.body.buyer_email,
-              contact_number: req.body.contact_number
+              contact_number: req.body.contact_number,
+              contact_address: req.body.contact_address
             })
             .then(function(dbClass) {
               res.json(dbClass);
