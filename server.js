@@ -3,6 +3,8 @@ var bodyParser = require("body-parser");
 
 var PORT = process.env.PORT || 3306;
 
+var db = require("./models");
+
 var app = express();
 var path = require('path');
 
