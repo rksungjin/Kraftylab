@@ -2,15 +2,15 @@
 
 Project Team Members:
 
-Richard Kim
-Sam Torosyan
-Jane Asawa
-Shri Narayanan
+- Richard Kim
+- Sam Torosyan
+- Jane Asawa
+- Shri Narayanan
 
 ![krafty](https://user-images.githubusercontent.com/34262469/43171876-2d2f9f7e-8f61-11e8-8892-f0015cc05003.gif)
 
 
-Application Concept and Motivation
+## Application Concept and Motivation
 
 • Kraftylab is a website dedicated to hosting craft making classes, specifically tailored to make products from scratch.
 
@@ -20,7 +20,7 @@ Application Concept and Motivation
 
 • Efficiently store data to be saved on backend for categorization, analysis and updating, in case of refunds, booking errors, etc
 
-Technologies used
+## Technologies used
 
 • Bootstrap was utilized for the website template, while handlebars stored the HTML and text elements to be displayed on the website page (via res.render).
 
