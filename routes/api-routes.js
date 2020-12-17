@@ -42,7 +42,6 @@ module.exports = function(app) {
 
 
 
-//Jane tried these 2 below but both crashed -- what is she missing
 /*
 var db = require("../models/class.js");
 router.get("/api/:class_name/:city", function(req, res) {
